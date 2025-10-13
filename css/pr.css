@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+body {
+    background-color: blueviolet;
+    font-family: "Poppins", sans-serif;
+}
+.intro{
+    color: aliceblue;
+}
+.introPar{
+    color: rgb(255, 254, 252);
+}
+.Python{
+    color: rgb(255, 254, 253);
+}
+.s{
+    color: rgb(178, 186, 176);
+}
+.S{
+    color: rgb(195, 210, 209);
+}
+.textTitle {
+  display: flex;
+  gap: 10px; /* المسافة بين العناوين */
+  align-items: center; /* باش يكونو متساويين فالمستوى */
+}
+
+.textTitle h1 {
+  margin: 0; /* باش يحيد المسافات الافتراضية */
+}
+p {
+    margin-top: 10px;
+}
+.html {
+    color: rgb(247, 247, 247);
+}
+.css {
+    color: rgb(12, 153, 153);
+}
+.aboutprPar {
+    color: rgb(240, 248, 255);
+}
+.jas {
+    color: rgb(255, 255, 255);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0 0.5rem;
+    max-width: 1200px;
+}
+.navigation {
+    color: rgb(0, 0, 0);
+}
+.ret {
+    color: rgb(255, 254, 254);
+}

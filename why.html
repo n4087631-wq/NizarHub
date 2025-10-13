@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/why.css" />
+    <title data-lang="title">Why this site</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="aboutMe.html" data-lang="returnBtn">Return</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
+
+    <h1><span style="color: white;" data-lang="whyPart">Why</span> <span style="color: #3498db;" data-lang="thisPart">this web site?</span></h1>
+
+    <p class="why" data-lang="desc">
+        The idea for this website started in an Instagram conversation between me and my first supporter "oumnia" which was titled "Why don't I make my own website?" and it took off and with a little bit of enthusiasm that I got from oumnia I was able to make a good start and search for shapes and colors and get everything ready. And that started on Tuesday October at 6:30 pm Morocco time. And from his conversation maybe it was a joke that made this!
+    </p>
+
+    <button onclick="calculateAge()" data-lang="launchBtn">⏳ How long since launch?</button>
+    <p id="result" data-lang="resultText"></p>
+
+<script>
+function calculateAge() {
+  const startDate = new Date("2025-10-07T18:30:00");
+  const now = new Date();
+
+  const diffMs = now - startDate;
+
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const months = Math.floor(days / 30.44);
+  const years = Math.floor(days / 365.25);
+
+  document.getElementById("result").textContent = `${years} years, ${months} months, and ${days} days have passed since the website launch.!`;
+}
+
+// Translation
+function translateWhy() {
+  const lang = localStorage.getItem("siteLang") || "en";
+  if(lang === "ar") {
+    document.body.dir = "rtl";
+    fetch("lang/ar.json")
+      .then(res => res.json())
+      .then(data => {
+        const page = data.why;
+        document.querySelector("[data-lang='returnBtn']").textContent = page.returnBtn;
+        document.querySelector("[data-lang='whyPart']").textContent = "لماذا";
+        document.querySelector("[data-lang='thisPart']").textContent = "هذا الموقع؟";
+        document.querySelector("[data-lang='desc']").textContent = page.desc;
+        document.querySelector("[data-lang='launchBtn']").textContent = page.launchBtn;
+
+        // حساب الوقت بالعربية عند الضغط
+        document.querySelector("[data-lang='launchBtn']").onclick = function() {
+          const startDate = new Date("2025-10-07T18:30:00");
+          const now = new Date();
+          const diffMs = now - startDate;
+          const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+          const months = Math.floor(days / 30.44);
+          const years = Math.floor(days / 365.25);
+          document.getElementById("result").textContent = `${years} سنة، ${months} شهر، و ${days} يوم منذ إطلاق الموقع.`;
+        }
+      });
+  } else {
+    document.body.dir = "ltr";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", translateWhy);
+</script>
+</body>
+</html>

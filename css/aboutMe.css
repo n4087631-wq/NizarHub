@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0 0.5rem;
+    max-width: 1200px;
+}
+
+.navigation ul{
+    display: flex;
+    list-style-type: none;
+    gap: 0.5rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color:aliceblue;
+}
+.navigation a:hover {
+    text-decoration: none;
+    color:rgb(49, 140, 143);
+}
+body {
+     background-color: #4a1785;
+}
+
+.aboutMe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto;
+    max-width: 1200px;
+    gap: 10rem;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+}
+.textTitle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 2rem;
+}
+.aboutName {
+    color:#eeeeee;
+    font-size: 1.8;
+}
+.aboutTitle {
+    color: #00adb5
+}
+.aboutMePar {
+    text-align: justify;
+    color: rgba(238, 238, 238, 0.75);
+}
+.aboutMy {
+  color: #00adb5;
+  font-size: 1.7rem;
+}
+.textTitle {
+  font-size: 1.2rem;
+}
+.why-btn {
+   background-color: #3a3e43;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+@media (max-width: 1023px) { 
+    header {
+        flex-direction: column;
+    
+    }
+
+}
+/* خلي كل حاجة داخل الشاشة */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* الصور الكبيرة */
+.aboutMeImg, .light {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* تنظيم النصوص والصور */
+.aboutMe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* النصوص */
+.textContainer {
+  max-width: 50%;
+  padding: 10px;
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .aboutMe {
+    flex-direction: column;
+    text-align: center;
+  }
+  .textContainer {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .aboutMeImg {
+    margin-bottom: 20px;
+  }
+}
+hr{
+    opacity: 50%;
+}
+.pr {
+  color: #eeeeee;
+  font-size: 1.8rem;
+}
+.lan {
+  color: #00adb5;
+  font-size: 1.8rem;
+}
+.aboutlan {
+  color: #c5c4c4;
+}
+.aboutMyName {
+  font-size: 1.6rem;
+}
+.pr-btn{
+ background-color: #3a3e43;
+  color: rgb(227, 223, 223);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+}

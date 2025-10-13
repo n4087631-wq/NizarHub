@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pr.css" />
+    <title data-lang="pageTitle">Programming Language</title>
+</head>
+<body>
+<header>
+    <nav class="navigation">
+        <ul>
+            <li><a class="ret" href="aboutMe.html" data-lang="return">Return</a></li>
+        </ul>
+    </nav>
+</header>
+<hr/>
+
+<section class="intro" id="Intro">
+    <div class="textTitle">
+        <h1>
+            <span style="color: rgb(240, 240, 240);" data-lang="intro1">intro</span>
+            <span style="color: rgb(64, 177, 233);" data-lang="intro2">duction</span>
+        </h1>
+    </div>
+    <p class="introPar" data-lang="introPar">
+        When I was 9 years old and at this young age I was interested in electronic fields including cyber security...
+    </p>
+</section>
+
+<section class="py" id="pyhton">
+    <div class="textTitle">
+        <h1>
+            <span style="color: white" data-lang="py1">Pyt</span>
+            <span style="color: rgb(64, 146, 233);" data-lang="py2">hon</span>
+        </h1>
+    </div>
+    <p class="Python" data-lang="pyPar">
+        I started learning it and it was the first language I learned since it is the most famous...
+    </p>
+    <p style="display: inline-flex; align-items: center;" class="S">
+        <span data-lang="pySource">A good source in Arabic if you want to learn it, just click in youtube icon.</span>
+        <a href="https://www.youtube.com/@Rakwan" target="_blank">
+            <img src="assets/youtube.svg" alt="YouTube" style="width: 24px; margin-left: 6px;">
+        </a>
+    </p>
+</section>
+
+<section class="HC" id="Ht/Cs">
+    <div class="textTitle">
+        <h1 class="html">HTML /</h1>
+        <h1 class="css">CSS</h1>
+    </div>
+    <p class="aboutprPar" data-lang="htmlCssPar">
+        I learned these two languages "html/css" when I was watching a video...
+    </p>
+    <p style="display: inline-flex; align-items: center;" class="s">
+        <span data-lang="htmlCssSource">Good source in Arabic if you want to learn Html/Css.</span>
+        <a href="https://www.youtube.com/watch?v=VzAxCThj_5k&t=2876s" target="_blank">
+            <img src="assets/youtube.svg" alt="YouTube" style="width: 24px; margin-left: 6px;">
+        </a>
+    </p>
+</section>
+
+<section class="js" id="JS">
+    <div class="textTitle">
+        <h1>
+            <span style="color: white" data-lang="js1">Java</span>
+            <span style="color: rgb(64, 146, 233);" data-lang="js2">Script</span>
+        </h1>  
+    </div>
+    <p class="jas" data-lang="jsPar">
+        I learned JavaScript with "Html/Css" because I need more than "html/css" to do a good website.
+    </p>
+    <p style="display: inline-flex; align-items: center;" class="s">
+        <span data-lang="jsSource">Good source in Arabic if you want to learn JavaScript.</span>
+        <a href="https://www.youtube.com/watch?v=PWuTLTFMtYw&list=PLknwEmKsW8OuTqUDaFRBiAViDZ5uI3VcE&pp=0gcJCaIEOCosWNin" target="_blank">
+            <img src="assets/youtube.svg" alt="YouTube" style="width: 24px; margin-left: 6px;">
+        </a>
+    </p>
+</section>
+
+<script>
+function translatePR() {
+    const lang = localStorage.getItem("siteLang") || "en";
+    fetch(`lang/${lang}.json`)
+        .then(res => res.json())
+        .then(data => {
+            if(lang === "ar") document.body.dir = "rtl";
+            else document.body.dir = "ltr";
+
+            const pageData = data.pr;
+            document.querySelectorAll("[data-lang]").forEach(el => {
+                const key = el.getAttribute("data-lang");
+                if(pageData[key]){
+                    el.textContent = pageData[key];
+                }
+            });
+        });
+}
+
+document.addEventListener("DOMContentLoaded", translatePR);
+</script>
+</body>
+</html>

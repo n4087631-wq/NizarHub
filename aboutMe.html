@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/aboutMe.css" />
+    <title data-lang="siteTitle">About Me</title>
+</head>
+<body>
+<section>
+<header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html" data-lang="homeLink">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<hr/>
+<section class="aboutMe" id="aboutMe">
+    <img src="assets/AboutMe.svg" alt="aboutMe image" class="aboutMeImg"/>
+
+    <div class="textContainer">
+        <div class="textTitle">
+            <h1 class="aboutName" data-lang="aboutName">About</h1>
+            <h1 class="aboutTitle" data-lang="aboutTitle">me</h1>
+            <img src="assets/lightbulb.svg" alt="lightbulb" class="light"/>
+        </div>
+        <p class="aboutMePar" data-lang="aboutMePar">
+            In this page you will find pages that contain everything about Me!
+        </p>
+    </div>
+    <button onclick="location.href='why.html'" class="why-btn" data-lang="whyBtn">Where did the site come from</button>
+</section>
+
+<section class="aboutName" id="aboutName">
+    <div class="textContainer">
+        <div class="textTitle">
+            <h1 class="aboutMyName" data-lang="didYouKnow">Did you know</h1>
+            <h1 class="aboutMy" data-lang="whatNameMeans">What my name means</h1>
+            <img src="assets/image.PNG" style="height: 2em; width: auto;">
+        </div>
+        <p class="aboutmyname" data-lang="nameMeaning">
+"Nizar" means something rare or few in the ancient deep Arabic language. it is a name that lives up to its meaning. as you will find it rarely used. I am proud of my name! Did you know what my name means now?
+        </p>
+    </div>
+</section>
+
+<section class="MyLan" id="MyLan">
+    <div class="textContainer">
+        <div class="textTitle">
+            <h1 class="pr" data-lang="programming">programming</h1>
+            <h1 class="lan" data-lang="languages">languages</h1>
+        </div>
+
+        <div class="icons" style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+            <img src="assets/javascript-logo.PNG" style="height: 1.8em; width: auto;">
+            <img src="assets/css-icon.PNG" style="height: 1.8em; width: auto;">
+            <img src="assets/html.PNG" style="height: 1.8em; width: auto;">
+            <img src="assets/python.webp" style="height: 1.8em; width: auto;">
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <img src="assets/boy.webp" width="170">
+            <p class="aboutlan" data-lang="aboutLanPar">
+                When I was young, I loved hacking and cybersecurity, and I discovered that there is something called a programming language, and I had to learn it. Python was the first language I learned, and I wrote my first code in C++.
+            </p>
+        </div>
+    </div>
+    <button onclick="location.href='pr.html'" class="pr-btn" data-lang="prBtn">My story with every programming language.</button>
+</section>
+
+<!-- Translation Script -->
+ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = localStorage.getItem("siteLang") || "en";
+  if(lang === "ar") document.body.dir = "rtl";
+  else document.body.dir = "ltr";
+
+  fetch(`lang/${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        const key = el.getAttribute("data-lang");
+        if(data.aboutMe && data.aboutMe[key]){
+          if(el.tagName === "INPUT") el.placeholder = data.aboutMe[key];
+          else el.textContent = data.aboutMe[key];
+        }
+      });
+    });
+});
+</script>
+
+
+</body>
+</html>

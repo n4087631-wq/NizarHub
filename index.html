@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/home.css" />
+  <title data-lang="siteTitle">NizarHub</title>
+</head>
+<body>
+  <header>
+    <nav class="navigation">
+      <ul>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+
+        <li><a href="aboutMe.html" data-lang="aboutMe">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr />
+
+  <section class="hero">
+    <img class="arrow" src="assets/arrow.svg" alt="arrow" />
+    <div class="heroSub">
+      <h1 class="name" data-lang="name">I'M NIZAR</h1>
+      <h1 class="title" data-lang="title1">And, this is my website</h1>
+      <h1 class="title" data-lang="title2">Where you find everything about me</h1>
+    </div>
+    <img src="assets/Hero.svg" alt="Hero image" class="heroImg" />
+  </section>
+
+  <section class="aboutMe" id="AboutMe">
+    <div class="textContainer">
+      <div class="textTitle">
+        <h1 class="aboutName" data-lang="why">Why this site?</h1>
+        <h1 class="aboutTitle" data-lang="find">And What did you find here ?</h1>
+      </div>
+      <p class="aboutSetPar" data-lang="desc">
+        I designed this website to be a role model for people and to show that young age is not a reason for what can be done, and to give an insight into myself. On this website you will find (my hobbies, skills, work, personal information, abilities...) and mini games with me and more...
+      </p>
+
+      <section class="disc" id="discMe">
+        <div class="TextContainer">
+          <div class="TextTitle">
+            <h1 class="first" data-lang="first">FIRST!</h1>
+            <h1 class="who" data-lang="who">Who is me ?</h1>
+          </div>
+          <div class="aboutDescPar">
+            <p data-lang="myname">my name is : Nizar</p>
+            <p data-lang="myage">My age : 13 years old</p>
+            <p data-lang="mycountry">I'm from : Morocco</p>
+          </div>
+
+          <!-- Compare Age Box -->
+          <div class="compare-box">
+            <h2 data-lang="compareTitle">How much age diffrence between us</h2>
+            <p data-lang="compareDesc">here you can compare your age with mine 👇</p>
+
+            <div class="input-boxes">
+              <input type="number" id="year" placeholder="Year" min="1900" max="2025" data-lang="year">
+              <input type="number" id="month" placeholder="Month (1-12)" min="1" max="12" data-lang="month">
+              <input type="number" id="day" placeholder="Day (1-30)" min="1" max="30" data-lang="day">
+              <button onclick="compare()" data-lang="check">Check</button>
+            </div>
+
+            <div class="result-box" id="result"></div>
+          </div>
+
+          <div class="distance-box">
+            <h2 data-lang="distanceTitle">🌍 Compare distance</h2>
+            <p data-lang="distanceDesc">Enter your country to see how far it is from Me "Meknes, Morocco" and you</p>
+            <input type="text" id="countryInput" placeholder="Enter your country" data-lang="countryInput">
+            <button onclick="calculateDistance()" data-lang="checkDistance">Check Distance 🚗</button>
+            <div id="distanceResult"></div>
+          </div>
+
+          <section class="tall" id="tallMe">
+            <div class="TextContainer">
+              <div class="TextTitle">
+                <h1 class="tall" data-lang="tall">How tall I am ?</h1>
+                <h1 class="weight" data-lang="weightTitle">And, How much do I weight ?</h1>
+              </div>
+              <p class="aboutTallPar" data-lang="heightPar">My height is about "158 cm" and I think it is almost suitable for my age.</p>
+              <p data-lang="weightPar">My weight is "37 kg" and I think I am a bit weak compared to my age, not a problem for me :)</p>
+              <button onclick="location.href='tall.html'" class="height-btn" data-lang="btnHeight">Are you taller than me?</button>
+            </div>
+
+            <div class="MindSection">
+              <p class="aboutMeLink" data-lang="mind">What matters is not your size, height or weight. What matters is what's in your mind 🧠</p>
+              <p class="IDK" data-lang="smart">Did you consider yourself smarter than me? Go to "About Me" page to find out!</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <script>
+    const myBirthday = new Date(2012, 4, 9);
+    function compare() {
+      const y = parseInt(document.getElementById("year").value);
+      const m = parseInt(document.getElementById("month").value);
+      const d = parseInt(document.getElementById("day").value);
+      if (!y || !m || !d) return alert("Please fill all fields!");
+      const userDate = new Date(y, m - 1, d);
+      let diff = myBirthday - userDate;
+      const future = diff < 0;
+      diff = Math.abs(diff);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const years = Math.floor(days / 365);
+      const months = Math.floor((days % 365) / 30);
+      const remainingDays = (days % 365) % 30;
+      let message = "";
+      if (future) message = `🕓 You are ${years} years, ${months} months, and ${remainingDays} days older than me.`;
+      else if (days === 0) message = "😲 Wow! We were born the same day!";
+      else message = `✨ You are ${years} years, ${months} months, and ${remainingDays} days younger than me.`;
+      document.getElementById("result").textContent = message;
+    }
+
+    // Translation
+    function translateHome() {
+      const lang = localStorage.getItem("siteLang") || "en";
+      if(lang === "ar") {
+        document.getElementById("langSelect").value = "ar";
+        fetch("lang/ar.json")
+          .then(res => res.json())
+          .then(data => {
+            document.querySelectorAll("[data-lang]").forEach(el => {
+              const key = el.getAttribute("data-lang");
+              if(data.home[key]){
+                if(el.tagName === "INPUT") el.placeholder = data.home[key];
+                else el.textContent = data.home[key];
+              }
+            });
+          });
+      }
+    }
+
+    document.getElementById("langSelect").addEventListener("change", function() {
+      const lang = this.value;
+      localStorage.setItem("siteLang", lang);
+      translateHome();
+    });
+
+    document.addEventListener("DOMContentLoaded", translateHome);
+  </script>
+  
+</body>
+</html>

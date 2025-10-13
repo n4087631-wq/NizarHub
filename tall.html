@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/tall.css">
+  <title data-lang="title">Height Comparison</title>
+</head>
+<body>
+  <button onclick="location.href='index.html'" class="home-btn" data-lang="homeBtn">HOME</button>
+
+  <div class="container">
+    <h2 data-lang="compareHeightTitle">Compare your height with Nizar 👇</h2>
+
+    <div class="input-box">
+      <input type="number" id="userHeight" placeholder="Enter your height (cm)" min="50" max="250" data-lang="heightInput">
+      <button onclick="compareHeight()" data-lang="compareBtn">Compare</button>
+    </div>
+
+    <div class="comparison">
+      <div class="human nizar">
+        <div class="head"></div>
+        <div class="body"></div>
+        <p data-lang="nizarHeight">Nizar<br>158 cm</p>
+      </div>
+
+      <div class="human user">
+        <div class="head" id="userHead"></div>
+        <div class="body" id="userBody"></div>
+        <p class="you" id="userLabel" data-lang="youLabel">You<br>-- cm</p>
+      </div>
+    </div>
+  </div>
+
+  <p id="messageBox" style="margin-top:20px;font-size:18px;color:rgb(95, 94, 94);" data-lang="messageBox"></p>
+
+<script>
+  const messages = {
+    short: "😂 You are so short",
+    tall: "Height is not everything, I am shorter than you and smarter than you 🗿",
+    same: "Same height as me 😎"
+  };
+
+  function compareHeight() {
+    const height = document.getElementById("userHeight").value;
+    const userBody = document.getElementById("userBody");
+    const userHead = document.getElementById("userHead");
+    const userLabel = document.getElementById("userLabel");
+    const messageBox = document.getElementById("messageBox");
+    const nizarHeight = 158;
+
+    if (height >= 50 && height <= 250) {
+      const scale = height / nizarHeight;
+      userBody.style.height = `${200 * scale}px`;
+      userHead.style.width = `${30 * scale}px`;
+      userHead.style.height = `${30 * scale}px`;
+      userLabel.innerHTML = `You<br>${height} cm`;
+
+      if (height < nizarHeight) messageBox.textContent = messages.short;
+      else if (height > nizarHeight) messageBox.textContent = messages.tall;
+      else messageBox.textContent = messages.same;
+    }
+  }
+
+  // Translation with localStorage
+  function translateTall() {
+    const lang = localStorage.getItem("siteLang") || "en";
+    if(lang === "ar") {
+      document.body.dir = "rtl";
+      document.querySelector(".home-btn").style.float = "right"; // يحرك زر العودة للـ home
+      fetch("lang/ar.json")
+        .then(res => res.json())
+        .then(data => {
+          document.querySelectorAll("[data-lang]").forEach(el => {
+            const key = el.getAttribute("data-lang");
+            if(data.tall[key]){
+              if(el.tagName === "INPUT") el.placeholder = data.tall[key];
+              else el.textContent = data.tall[key];
+            }
+          });
+          messages.short = data.tall["msgShort"];
+          messages.tall = data.tall["msgTall"];
+          messages.same = data.tall["msgSame"];
+        });
+    } else {
+      document.body.dir = "ltr";
+      document.querySelector(".home-btn").style.float = "left";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", translateTall);
+</script>
+</body>
+</html>

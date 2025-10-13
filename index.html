@@ -9,12 +9,13 @@
 <body>
   <header>
     <nav class="navigation">
-      <ul>
+      <div class="lang-container">
         <select id="langSelect">
           <option value="en">English</option>
           <option value="ar">العربية</option>
         </select>
-
+      </div>
+      <ul>
         <li><a href="aboutMe.html" data-lang="aboutMe">About Me</a></li>
       </ul>
     </nav>
@@ -62,17 +63,18 @@
               <input type="number" id="year" placeholder="Year" min="1900" max="2025" data-lang="year">
               <input type="number" id="month" placeholder="Month (1-12)" min="1" max="12" data-lang="month">
               <input type="number" id="day" placeholder="Day (1-30)" min="1" max="30" data-lang="day">
-              <button onclick="compare()" data-lang="check">Check</button>
+              <button id="compareBtn" data-lang="check">Check</button>
             </div>
 
             <div class="result-box" id="result"></div>
           </div>
 
+          <!-- Distance Box -->
           <div class="distance-box">
             <h2 data-lang="distanceTitle">🌍 Compare distance</h2>
             <p data-lang="distanceDesc">Enter your country to see how far it is from Me "Meknes, Morocco" and you</p>
             <input type="text" id="countryInput" placeholder="Enter your country" data-lang="countryInput">
-            <button onclick="calculateDistance()" data-lang="checkDistance">Check Distance 🚗</button>
+            <button id="distanceBtn" data-lang="checkDistance" onclick="calculateDistance()">Check Distance 🚗</button>
             <div id="distanceResult"></div>
           </div>
 
@@ -98,28 +100,29 @@
   </section>
 
   <script>
+    // مقارنة الأعمار
     const myBirthday = new Date(2012, 4, 9);
-    function compare() {
+    document.getElementById("compareBtn").addEventListener("click", function() {
       const y = parseInt(document.getElementById("year").value);
       const m = parseInt(document.getElementById("month").value);
       const d = parseInt(document.getElementById("day").value);
       if (!y || !m || !d) return alert("Please fill all fields!");
       const userDate = new Date(y, m - 1, d);
-      let diff = myBirthday - userDate;
-      const future = diff < 0;
+      let diff = userDate - myBirthday;
+      const future = diff > 0;
       diff = Math.abs(diff);
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const years = Math.floor(days / 365);
       const months = Math.floor((days % 365) / 30);
       const remainingDays = (days % 365) % 30;
       let message = "";
-      if (future) message = `🕓 You are ${years} years, ${months} months, and ${remainingDays} days older than me.`;
-      else if (days === 0) message = "😲 Wow! We were born the same day!";
-      else message = `✨ You are ${years} years, ${months} months, and ${remainingDays} days younger than me.`;
+      if (days === 0) message = "😲 Wow! We were born the same day!";
+      else if (future) message = `✨ You are ${years} years, ${months} months, and ${remainingDays} days younger than me.`;
+      else message = `🕓 You are ${years} years, ${months} months, and ${remainingDays} days older than me.`;
       document.getElementById("result").textContent = message;
-    }
+    });
 
-    // Translation
+    // ترجمة الموقع
     function translateHome() {
       const lang = localStorage.getItem("siteLang") || "en";
       if(lang === "ar") {
@@ -139,13 +142,13 @@
     }
 
     document.getElementById("langSelect").addEventListener("change", function() {
-      const lang = this.value;
-      localStorage.setItem("siteLang", lang);
-      translateHome();
+      localStorage.setItem("siteLang", this.value);
+      location.reload();
     });
 
     document.addEventListener("DOMContentLoaded", translateHome);
   </script>
-  
+
+  <script src="distance.js"></script>
 </body>
 </html>

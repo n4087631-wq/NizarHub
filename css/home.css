@@ -13,7 +13,6 @@ body {
      background-color: #4a1785;
 }
 
-
 header{
     display: flex;
     justify-content: space-between;
@@ -121,6 +120,8 @@ hr{
     font-size: 1.5rem;
     text-align: justify;
     color: rgba(238,238,238,0.75);
+    margin-left: 10px;
+    margin-right: 20px;
 }
 body {
   overflow-x: hidden;
@@ -363,4 +364,15 @@ button:hover {
   border-radius: 10px;
   font-size: 17px;
   color: #aadfff;
+}
+.lang-container {
+  position: absolute; /* أو fixed إذا بغيت يبقى معاك فالشاشة */
+  top: 10px;   /* المسافة من الأعلى */
+  right: 20px; /* المسافة من اليمين */
+}
+#langSelect {
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
 }

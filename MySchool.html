@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/myschool.css"/>
+    <title data-lang="myschoolTitle">My school</title>
+</head>
+<body>
+   
+    <header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="school.html" class="ret" data-lang="return">Return</a></li>
+        </ul>
+    </nav>
+</header>
+<hr/>
+<section class="ch" id="Chorouk">
+    <div class="textTitle">
+        <h1 class="titch" data-lang="chourouk">Chourouk</h1>
+        <h1 class="tich" data-lang="schoolWord">School</h1>
+    </div>
+    <p class="txtch" data-lang="desc1">
+         Chourouk School is a school that has more than one branch around Morocco. It is a private primary and secondary school. It has 3 branches in Meknes: "Chourouk 1", "Chourouk 2", and "Chourouk 3". I studied my primary education at "Chourouk 2" School and my secondary education at "Chourouk 3".
+    </p>
+    <p class="txtch" data-lang="desc2">
+         This school also has the continuation of series 1, 2, 3 which is 4 in Al Hajeb.
+    </p>
+    <p class="txtch" data-lang="desc3">
+         Chourouk has 3 accounts on Facebook where they post their activities, outings, or many announcements about them... , One account includes all the branches, the second is for "Chourouk 3" and the last account is for "Chourouk 4".
+    </p>
+     <p style="display: flex; align-items: center;" class="s">
+        <span class="ch3" data-lang="fb3">A link to Chourouk 3 in Facebook.</span>
+        <a href="https://www.facebook.com/profile.php?id=100041476094082" target="_blank">
+            <img src="assets/facebook.webp" alt="facebook" style="width: 24px;">
+        </a>
+    </p>
+     <p style="display: flex; align-items: center;" class="s">
+        <span class="ch4" data-lang="fb4">A link to Chourouk 4 in Facebook.</span>
+        <a href="https://www.facebook.com/Chouroukexcellence.4" target="_blank">
+            <img src="assets/facebook.webp" alt="facebook" style="width: 24px; margin-left: 6px;">
+        </a>
+    </p>
+    <p style="display: flex; align-items: center;" class="s">
+        <span class="ch" data-lang="fbAll">A link to Chourouk page for all branches.</span>
+        <a href="https://www.facebook.com/chouroukexcellence123" target="_blank">
+            <img src="assets/facebook.webp" alt="facebook" style="width: 24px; margin-left: 6px;">
+        </a>
+    </p>
+</section>
+
+<script>
+    // ترجمة الصفحة
+    function translateMySchool() {
+      const lang = localStorage.getItem("siteLang") || "en";
+      if(lang === "ar") {
+        fetch("lang/ar.json")
+          .then(res => res.json())
+          .then(data => {
+            document.querySelectorAll("[data-lang]").forEach(el => {
+              const key = el.getAttribute("data-lang");
+              if(data.myschool && data.myschool[key]){
+                if(el.tagName === "INPUT") el.placeholder = data.myschool[key];
+                else el.textContent = data.myschool[key];
+              }
+            });
+          });
+      }
+    }
+    document.addEventListener("DOMContentLoaded", translateMySchool);
+</script>
+
+</body>
+</html>

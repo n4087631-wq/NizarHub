@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+
+* {
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+font-family: "Poppins", serif;
+}
+
+body {
+     background-color: #511a8f;
+}
+
+hr {
+    opacity: 50%;
+    margin-top: 10px;
+}
+
+.ret {
+    color: aliceblue;
+    margin: 30px;
+}
+
+.textTitle {
+  display: flex;
+  gap: 10px; /* المسافة بين العناوين */
+  align-items: center; /* باش يكونو متساويين فالمستوى */
+}
+
+.titch {
+    color: aliceblue;
+}
+
+.tich {
+    color: rgb(63, 173, 176);
+}
+
+.txtch {
+    color: rgba(238,238,238,0.75);
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.ch3 {
+    color: beige;
+    margin: 30px;
+}
+.ch4 {
+    color: beige;
+    margin: 30px;
+}
+.ch {
+    color: beige;
+    margin: 30px;
+}
+
+/* إذا اللغة عربية */
+html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* إذا الإنجليزية */
+html[lang="en"] body {
+    direction: ltr;
+    text-align: left;
+}

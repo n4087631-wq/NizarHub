@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/school.css" />
+    <title data-lang="siteTitle">study path</title>
+</head>
+<body>
+    
+
+    <header>
+    <ul>
+        <li><a href="index.html" class="ho" data-lang="home">Home</a></li>
+        <li><a class="space">  |  </a></li>
+        <li><a href="aboutMe.html" class="ab" data-lang="about">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr />
+
+  <section class="status" id="studyStatus">
+    <div class="textTitle">
+        <h1 class="myst" data-lang="myStudy">My study</h1>
+        <h1 class="scho" data-lang="status">status</h1>
+    </div>
+    <p class="aboutshPar" data-lang="studyDesc">
+        My study status was good to some extent, as throughout primary school it was excellent and sometimes more so, and while I was making this site, I was in the second year of middle school. Throughout middle school so far, my level is good, which makes me proud. But I may not excel academically during these periods because I do not study what I want and I do not study my interests, but in any case, I will study well until I reach the level at which I will study my interests.
+    </p>
+  </section>
+   <section class="school" id="my school">
+    <div class="textTitle">
+        <h1 class="myst" data-lang="mySchool">My</h1>
+        <h1 class="scho" data-lang="school">school</h1>
+    </div>
+    <p class="aboutshPar" data-lang="schoolDesc">
+      I studied for about 8 years in a private school called "Chorouk" and I will finish my last year, which is the 9th year, next year. Bey the wey "Next year I will update this text and add part of it" . Chorouk School is an expanding school and has branches all over Morocco. Do you want to know more about it?
+    </p>
+    <button onclick="location.href='MySchool.html'" class="sch-btn" data-lang="schPtn">More about Chorouk school</button>
+   </section>
+
+   <script>
+    // ترجمة الصفحة
+    function translateSchool() {
+      const lang = localStorage.getItem("siteLang") || "en";
+      if(lang === "ar") {
+        fetch("lang/ar.json")
+          .then(res => res.json())
+          .then(data => {
+            document.querySelectorAll("[data-lang]").forEach(el => {
+              const key = el.getAttribute("data-lang");
+              if(data.school && data.school[key]){
+                if(el.tagName === "INPUT") el.placeholder = data.school[key];
+                else el.textContent = data.school[key];
+              }
+            });
+          });
+      }
+    }
+    document.addEventListener("DOMContentLoaded", translateSchool);
+  </script>
+
+</body>
+</html>

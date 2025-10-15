@@ -45,15 +45,44 @@ const distances = {
 };
 
 function calculateDistance() {
-  const input = document.getElementById("countryInput").value.trim().toLowerCase();
+  const inputEl = document.getElementById("countryInput");
   const resultDiv = document.getElementById("distanceResult");
+  if (!inputEl || !resultDiv) return; // تأمين
 
-  if (input === "morocco") {
-    resultDiv.innerHTML = "🥳 Wow! You are in my country! Hello from Meknes!";
-  } else if (distances[input]) {
-    const { km, hours } = distances[input];
-    resultDiv.innerHTML = `The distance between Me and YOU "${input.toUpperCase()}" is about <b>${km} km</b> — roughly <b>${hours} hours</b> by car. 🚗`;
-  } else {
-    resultDiv.innerHTML = "❌ Sorry, this country isn't in the list yet!";
+  const userInput = inputEl.value.trim().toLowerCase();
+
+  // في حال الحقل فارغ
+  if (userInput === "") {
+    resultDiv.innerHTML = "⚠️ Please enter a country name first.";
+    return;
   }
+
+  // احتمال المستخدم يكتب أسماء بديلة
+  const normalized = userInput
+    .replace(/^the\s+/g, "") // حذف كلمة "the" في البداية
+    .replace(/[^\w\s]/g, "") // حذف الرموز
+    .trim();
+
+  if (normalized === "morocco" || normalized === "maroc") {
+    resultDiv.innerHTML = "🥳 Wow! You are in my country! Hello from Meknes!";
+    return;
+  }
+
+  // البحث في قاعدة البيانات
+  if (distances[normalized]) {
+    const { km, hours } = distances[normalized];
+    resultDiv.innerHTML = `The distance between Me and YOU (${normalized.toUpperCase()}) is about <b>${km} km</b> — roughly <b>${hours} hours</b> by car. 🚗`;
+    return;
+  }
+
+  // محاولة تطابق جزئي (مثلاً كتب "fran" بدل france)
+  const foundKey = Object.keys(distances).find(key => key.startsWith(normalized));
+  if (foundKey) {
+    const { km, hours } = distances[foundKey];
+    resultDiv.innerHTML = `The distance between Me and YOU (${foundKey.toUpperCase()}) is about <b>${km} km</b> — roughly <b>${hours} hours</b> by car. 🚗`;
+    return;
+  }
+
+  // إذا ما لقيناش
+  resultDiv.innerHTML = "❌ Sorry, this country isn't in the list yet!";
 }

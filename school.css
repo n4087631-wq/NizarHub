@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+/* ========== القواعد العامة ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+body {
+  background-color: #4a1785;
+}
+
+/* ========== الهيدر ========== */
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+header ul li a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 0 0.5rem;
+  transition: 0.3s;
+}
+
+header ul li a:hover {
+  color: rgb(49, 140, 143);
+}
+
+/* ========== العناوين والنصوص ========== */
+.textTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.myst, .frstann {
+  color: aliceblue;
+}
+
+.scho, .frys {
+  color: rgb(72, 202, 207);
+}
+
+.aboutshPar, .prfrst {
+  text-align: justify;
+  color: rgba(238, 238, 238, 0.75);
+  margin: 10px 20px;
+}
+
+/* ========== الزر ========== */
+.sch-btn {
+  background-color: #3a3e43;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sch-btn:hover {
+  background-color: #2c2f33;
+}
+
+/* ========== الكروت والتمرير ========== */
+.report-cards-container {
+  max-width: 900px;
+  margin: 30px auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+.report-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #ffffff; /* الخلفية البيضاء */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-width: 560px;
+  transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ========== الجداول ========== */
+.report-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.report-card th,
+.report-card td {
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+.report-card th {
+  background: #007bff;
+  color: white;
+}
+
+.report-card td {
+  background: #fafafa;
+}
+
+/* ========== التمرير الأفقي ========== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========== النقاط ========== */
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #007bff;
+}
+
+/* ========== الشاشات الصغيرة ========== */
+@media (max-width: 600px) {
+  .report-card {
+    padding: 15px;
+    min-width: 320px;
+  }
+
+  .report-card th,
+  .report-card td {
+    font-size: 12px;
+    padding: 5px;
+  }
+}

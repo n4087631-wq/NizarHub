@@ -1,65 +1,165 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/school.css" />
+    <link rel="stylesheet" href="css/school.css?v=5" />
     <title data-lang="siteTitle">study path</title>
 </head>
 <body>
-    
-
     <header>
-    <ul>
-        <li><a href="index.html" class="ho" data-lang="home">Home</a></li>
-        <li><a class="space">  |  </a></li>
-        <li><a href="aboutMe.html" class="ab" data-lang="about">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
-  <hr />
+        <nav>
+            <ul>
+                <li><a href="index.html" class="ho" data-lang="home">Home</a></li>
+                <li><a class="space"> | </a></li>
+                <li><a href="aboutMe.html" class="ab" data-lang="about">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
 
-  <section class="status" id="studyStatus">
-    <div class="textTitle">
-        <h1 class="myst" data-lang="myStudy">My study</h1>
-        <h1 class="scho" data-lang="status">status</h1>
-    </div>
-    <p class="aboutshPar" data-lang="studyDesc">
-        My study status was good to some extent, as throughout primary school it was excellent and sometimes more so, and while I was making this site, I was in the second year of middle school. Throughout middle school so far, my level is good, which makes me proud. But I may not excel academically during these periods because I do not study what I want and I do not study my interests, but in any case, I will study well until I reach the level at which I will study my interests.
-    </p>
-  </section>
-   <section class="school" id="my school">
-    <div class="textTitle">
-        <h1 class="myst" data-lang="mySchool">My</h1>
-        <h1 class="scho" data-lang="school">school</h1>
-    </div>
-    <p class="aboutshPar" data-lang="schoolDesc">
-      I studied for about 8 years in a private school called "Chorouk" and I will finish my last year, which is the 9th year, next year. Bey the wey "Next year I will update this text and add part of it" . Chorouk School is an expanding school and has branches all over Morocco. Do you want to know more about it?
-    </p>
-    <button onclick="location.href='MySchool.html'" class="sch-btn" data-lang="schPtn">More about Chorouk school</button>
-   </section>
+    <section class="status" id="studyStatus">
+        <div class="textTitle">
+            <h1 class="myst" data-lang="myStudy">My study</h1>
+            <h1 class="scho" data-lang="status">status</h1>
+        </div>
+        <p class="aboutshPar" data-lang="studyDesc">
+            My study status was good to some extent, as throughout primary school it was excellent and sometimes more so, and while I was making this site, I was in the second year of middle school. Throughout middle school so far, my level is good, which makes me proud. But I may not excel academically during these periods because I do not study what I want and I do not study my interests, but in any case, I will study well until I reach the level at which I will study my interests.
+        </p>
+    </section>
 
-   <script>
-    // ترجمة الصفحة
-    function translateSchool() {
-      const lang = localStorage.getItem("siteLang") || "en";
-      if(lang === "ar") {
+    <section class="school" id="my-school">
+        <div class="textTitle">
+            <h1 class="myst" data-lang="mySchool">My</h1>
+            <h1 class="scho" data-lang="school">school</h1>
+        </div>
+        <p class="aboutshPar" data-lang="schoolDesc">
+            I studied for about 8 years in a private school called "Chorouk" and I will finish my last year, which is the 9th year, next year. Chorouk School is an expanding school and has branches all over Morocco. Do you want to know more about it?
+        </p>
+        <button onclick="location.href='MySchool.html'" class="sch-btn" data-lang="schPtn">More about Chorouk school</button>
+    </section>
+
+    <section class="years" id="ann">
+        <div class="textTitle">
+            <h1 class="frstann" data-lang="frstann">First</h1>
+            <h1 class="frys" data-lang="frstyrs">Year</h1>
+        </div>
+        <p class="prfrst" data-lang="frstpr">
+            The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied with each other in kindergarten the previous year, but it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe.
+        </p>
+    </section>
+
+    <!-- الحاوية الخاصة بالجدولين -->
+    <div class="report-cards-container">
+        <div class="cards-wrapper" id="cardsWrapper">
+            <!-- بطاقة الدورة 1 -->
+            <div class="report-card">
+                <h2>CHOUROUK EXCELLENCE</h2>
+                <p><strong>السنة الدراسية:</strong> 2018 - 2019</p>
+                <p><strong>المستوى:</strong> الأول ابتدائي</p>
+                <p><strong>اسم التلميذ: </strong> nizar rarhibi - نزار رغيبي</p>
+                <p><strong>الفوج :1</strong></p>
+                <p><strong>الدوره : 1</strong></p>
+                <div class="table-responsive">
+                    <table class="table1">
+                        <tr><th>المواد</th><th>النقطة /10</th></tr>
+                        <tr><td>القراءة الشعريه</td><td>10</td></tr>
+                        <tr><td>الصرف والتحويل</td><td>10</td></tr>
+                        <tr><td>الاساليب و التراكيب</td><td>9.75</td></tr>
+                        <tr><td>التعبير الكتابي</td><td>10</td></tr>
+                        <tr><td>Maths</td><td>10</td></tr>
+                        <tr><th>Français</th><th>Note /10</th></tr>
+                        <tr><td>Expression Orale</td><td>7.5</td></tr>
+                        <tr><td>Lecture</td><td>7.25</td></tr>
+                        <tr><td>Expression Orale</td><td>9.75</td></tr>
+                        <tr><td>Orthographe / Dictée</td><td>9</td></tr>
+                        <tr><td>Exercices Écrits</td><td>9.75</td></tr>
+                        <tr><td>Expression Ecrite</td><td>7.5</td></tr>
+                        <tr><td>Ecriture / Copie</td><td>7.75</td></tr>
+                        <tr><td>Poesie/chants/comptines</td><td>7.75</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- بطاقة الدورة 2 -->
+            <div class="report-card">
+                <h2>CHOUROUK EXCELLENCE</h2>
+                <p><strong>السنة الدراسية:</strong> 2018 - 2019</p>
+                <p><strong>المستوى:</strong> الأول ابتدائي</p>
+                <p><strong>اسم التلميذ: </strong> nizar rarhibi - نزار رغيبي</p>
+                <p><strong>الفوج :1</strong></p>
+                <p><strong>الدوره : 2</strong></p>
+                <div class="table-responsive">
+                    <table class="table2">
+                        <tr><th>المواد</th><th>النقطة /10</th></tr>
+                        <tr><td>القراءة الشعريه</td><td>8</td></tr>
+                        <tr><td>الصرف والتحويل</td><td>9.75</td></tr>
+                        <tr><td>الاساليب و التراكيب</td><td>9</td></tr>
+                        <tr><td>التعبير الكتابي</td><td>9.25</td></tr>
+                        <tr><td>Maths</td><td>9.25</td></tr>
+                        <tr><th>Français</th><th>Note /10</th></tr>
+                        <tr><td>Expression Orale</td><td>9</td></tr>
+                        <tr><td>Lecture</td><td>8.5</td></tr>
+                        <tr><td>Expression Orale</td><td>9.75</td></tr>
+                        <tr><td>Orthographe / Dictée</td><td>7.75</td></tr>
+                        <tr><td>Exercices Écrits</td><td>9.75</td></tr>
+                        <tr><td>Expression Ecrite</td><td>9</td></tr>
+                        <tr><td>Ecriture / Copie</td><td>9</td></tr>
+                        <tr><td>Poesie/chants/comptines</td><td>8.5</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+            <button class="prev">
+            <button class="next">
+<h1>WORKING ON THE SITE , YOU CAN COME BACK LATER TO SEE THE SEQUEL, AND THANKS.</h1>
+<script>
+const wrapper = document.getElementById("cardsWrapper");
+const cards = document.querySelectorAll(".report-card");
+const dots = document.querySelectorAll(".dot");
+let current = 0;
+
+function showCard(index){
+    wrapper.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot,i)=> dot.classList.toggle("active", i===index));
+}
+
+document.querySelector(".next").addEventListener("click", ()=>{
+    current = (current+1) % cards.length;
+    showCard(current);
+});
+
+document.querySelector(".prev").addEventListener("click", ()=>{
+    current = (current-1+cards.length) % cards.length;
+    showCard(current);
+});
+
+let startX = 0;
+wrapper.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+wrapper.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    if(startX-endX > 50) document.querySelector(".next").click();
+    else if(endX-startX > 50) document.querySelector(".prev").click();
+});
+
+function translateSchool() {
+    const lang = localStorage.getItem("siteLang") || "en";
+    document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    if(lang === "ar") {
         fetch("lang/ar.json")
-          .then(res => res.json())
-          .then(data => {
-            document.querySelectorAll("[data-lang]").forEach(el => {
-              const key = el.getAttribute("data-lang");
-              if(data.school && data.school[key]){
-                if(el.tagName === "INPUT") el.placeholder = data.school[key];
-                else el.textContent = data.school[key];
-              }
+            .then(res => res.json())
+            .then(data => {
+                document.querySelectorAll("[data-lang]").forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if(data.school && data.school[key]){
+                        if(el.tagName === "INPUT") el.placeholder = data.school[key];
+                        else el.textContent = data.school[key];
+                    }
+                });
             });
-          });
-      }
     }
-    document.addEventListener("DOMContentLoaded", translateSchool);
-  </script>
-
+}
+document.addEventListener("DOMContentLoaded", translateSchool);
+</script>
 </body>
 </html>

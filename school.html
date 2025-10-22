@@ -4,6 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/school.css" />
+    <style>
+        /* ========== الكروت والتمرير ========== */
+.report-cards-container {
+  max-width: 900px;
+  margin: 30px auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+.report-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #ffffff; /* الخلفية البيضاء */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-width: 560px;
+  transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ========== الجداول ========== */
+.report-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.report-card th,
+.report-card td {
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+.report-card th {
+  background: #007bff;
+  color: white;
+}
+
+.report-card td {
+  background: #fafafa;
+}
+
+/* ========== التمرير الأفقي ========== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #007bff;
+}
+
+
+/* إصلاح الاتجاه في النسخة العربية */
+body[dir="rtl"] .report-cards-container,
+body[dir="rtl"] .years {
+  direction: ltr; /* يخلي الجداول بحالهم بلا ما يتقلبو */
+}
+
+body[dir="rtl"] .aboutshPar,
+body[dir="rtl"] .prfrst {
+  text-align: right; /* يخلي النصوص ديال الفقرات العربية واجهتها صحيحة */
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <title data-lang="siteTitle">Study Path</title>
 </head>
 <body>
@@ -45,10 +135,10 @@
     <!-- السنة الأولى -->
     <section class="years" id="ann">
         <div class="textTitle">
-            <h1 class="frstann" data-lang="frstann">First</h1>
-            <h1 class="frys" data-lang="frstyrs">Year</h1>
+            <h1 class="myst" data-lang="frstyrs">First</h1>
+            <h1 class="scho" data-lang="frstann">Year</h1>
         </div>
-        <p class="prfrst" data-lang="frstpr">
+        <p class="aboutshPar" data-lang="frstpr">
             The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied with each other in kindergarten the previous year, but it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe.
         </p>
     </section>

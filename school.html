@@ -147,7 +147,7 @@
         else if(endX - startX > 50) document.querySelector(".prev").click();
     });
 
-    // ترجمة اللغة
+     // ترجمة الصفحة
     function translateSchool() {
         const lang = localStorage.getItem("siteLang") || "en";
         document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");

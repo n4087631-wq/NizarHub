@@ -381,17 +381,36 @@
         <button onclick="location.href='MySchool.html'" class="sch-btn" data-lang="schPtn">More about Chorouk school</button>
     </section>
 
-  <section class="frstyear" id="frstann">
+<section class="frstyear" id="frstann">
     <div class="textTitle">
-        <h1 class="myst" data-lang="frstann">First</h1>
-        <h1 class="scho" data-lang="frstyrs">Year</h1>
+        <h1 class="myst" id="frst-title-1"></h1>
+        <h1 class="scho" id="frst-title-2"></h1>
     </div>
-    <p class="aboutshPar" data-lang="frstpr">
-         The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied with each other in kindergarten the previous year, but it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe.
-         Here below is the result of the first year ;
-    </p>
-    
-  </section>
+    <p class="aboutshPar" id="frst-paragraph"></p>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const firstYearTranslations = {
+        ar: {
+            title1: "السنة",
+            title2: "الأولى",
+            paragraph:" السنة الأولى، والتي كانت السنة الأولى من المدرسة الابتدائية، هي السنة التي دخلت فيها هذه المدرسة، حيث لم أكن أعرف أحدًا ولم يعرفني أحد لأن معظمهم درسوا مع بعضهم في الروضة في السنة السابقة، لكن لم يكن هذا مشكلة، لأنه مع الوقت اعتدت عليهم وأصبحت جزءًا منهم. قد لا أقيم مستواي في تلك السنة بدقة، لكن أقول أنني كنت من بين الأفضل، أعتقد ذلك. وفيما يلي نتيجة السنة الأولى;"
+        },
+        en: {
+            title1: "First",
+            title2: "Year",
+            paragraph: "The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied together in kindergarten the previous year. But it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe. Here below is the result of the first year;"
+        }
+    };
+
+    document.getElementById("frst-title-1").textContent = firstYearTranslations[lang].title1;
+    document.getElementById("frst-title-2").textContent = firstYearTranslations[lang].title2;
+    document.getElementById("frst-paragraph").textContent = firstYearTranslations[lang].paragraph;
+});
+</script>
 
    <!-- الحاوية الخاصة بالجدولين -->
 <section class="school-carousel">
@@ -459,12 +478,11 @@
 </section>
 
 <!-- جدول النتائج النهائي أسفل الجدولين -->
-<!-- جدول كشف النقط أسفل الجدولين -->
 <section class="grades-section">
   <div class="sheet">
     <div class="sheet-header">
       <div class="school-info">
-        <div class="logo"><img src="assets/morocco-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="logo"><img src="assets/maroc-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
         <div class="school-text">
           <h1>CHOUROUK EXCELLENCE</h1>
           <p>الموسم الدراسي 2018/2019 -- الاول ابتدائي</p>
@@ -505,7 +523,7 @@
             <th>المكونات</th>
             <th>نقطه المراقبه المستمره</th>
             <th>المعامل</th>
-            <th>ن × م</th>
+            <th>ن×م</th>
           </tr>
         </thead>
         <tbody>

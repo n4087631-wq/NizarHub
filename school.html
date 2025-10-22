@@ -146,6 +146,203 @@
 .report-card table {
     min-width: max-content; /* يضمن ظهور كل الأعمدة بما فيها الفرنسية */
 }
+
+/* ====== جدول النتائج النهائي ====== */
+.final-report {
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.final-report .report-card.single {
+  max-width: 900px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  color: black;
+}
+
+.final-report .report-card h3 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.final-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.final-table th, .final-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* لون النصوص داخل الجدول */
+.final-table td, .final-table th {
+  color: #0b1220;
+}
+
+.final-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* اللون الخاص بالأرقام (آخر عمود) */
+.final-table td:last-child {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.final-summary {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #f5f8ff;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.final-summary span {
+  color: #007bff;
+  font-weight: bold;
+}
+/* ====== كشف النقط أسفل الجدولين ====== */
+.grades-section {
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.sheet {
+  max-width: 950px;
+  background: #fff;
+  border: 1px solid #d6e6f3;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  direction: rtl;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.school-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  background: #f5f9fc;
+  border-radius: 8px;
+  border: 1px solid #d6e6f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b63a3;
+  font-weight: bold;
+}
+
+.header-meta p {
+  margin: 2px 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #f5f9fc;
+  border: 1px solid #d6e6f3;
+  border-radius: 8px;
+  padding: 10px 15px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.card .label {
+  color: #6b7280;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.card .value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.grades table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grades th {
+  background: linear-gradient(90deg, #eef7ff, #ffffff);
+  border-bottom: 1px solid #d6e6f3;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.grades td {
+  border-bottom: 1px dashed #d6e6f3;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.grades tr:nth-child(even) {
+  background: #fbfeff;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.summary-box {
+  background: #fff;
+  border: 1px solid #d6e6f3;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(11, 99, 163, 0.04);
+}
+
+.summary-box .label {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.summary-box .value {
+  color: #0b63a3;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
     </style>
     <title data-lang="siteTitle">Study Patch</title>
 </head>
@@ -259,6 +456,86 @@
         </div>
         <button class="arrow right">&#10095;</button>
     </div>
+</section>
+
+<!-- جدول النتائج النهائي أسفل الجدولين -->
+<!-- جدول كشف النقط أسفل الجدولين -->
+<section class="grades-section">
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="school-info">
+        <div class="logo"><img src="assets/morocco-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="school-text">
+          <h1>CHOUROUK EXCELLENCE</h1>
+          <p>الموسم الدراسي 2018/2019 -- الاول ابتدائي</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p>الصف: 1APG-1</p>
+        <p>عدد النقط: 24</p>
+        <p>رقم التسجيل: C189040597</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="card">
+        <div class="label">التلميذ</div>
+        <div class="value">نزار رغيبي</div>
+        <div style="height:8px"></div>
+        <div class="label">المستوى</div>
+        <div class="value"> الاول ابتدائي</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">المعدل الدوره</div>
+        <div class="value">8.84</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">الملاحظة</div>
+        <div class="value">مجتهد و منتبه</div>
+      </div>
+    </div>
+
+    <div class="grades" role="region" aria-label="جدول النقط">
+      <table>
+        <thead>
+          <tr>
+            <th>المواد</th>
+            <th>المكونات</th>
+            <th>نقطه المراقبه المستمره</th>
+            <th>المعامل</th>
+            <th>ن × م</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="subject">التربية الاسلاميه</td><td>معدل الوحده</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">اللغه العربيه</td><td>القراءه</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">              </td><td>الاملاء</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">              </td><td>الخط</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>التعبيرالشفوي</td><td>9.75</td><td>1</td><td>9.75</td></tr>
+          <tr><td class="subject">              </td><td>النقل</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">النشاط العلمي</td><td>معدل الوحده</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">التربيةالفنية</td><td>معدل الوحده</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">الرياضيات</td><td>معدل الوحده</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">اللغة الفرنسية</td><td>معدل الوحده</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">التربية البدنية</td><td>معدل الوحده</td><td>7</td><td>1</td><td>7</td></tr>
+      </table>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="label">معدل القسم</div>
+        <div class="value">8.27</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="label">المجموع ن × م</div>
+        <div class="value">61.85</div>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
 
 <script>

@@ -3,117 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/school.css" />
-    <style>
-        /* ========== الكروت والتمرير ========== */
-.report-cards-container {
-  max-width: 900px;
-  margin: 30px auto;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.cards-wrapper {
-  display: flex;
-  gap: 30px;
-  padding: 20px;
-}
-
-.report-card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  background-color: #ffffff; /* الخلفية البيضاء */
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  min-width: 560px;
-  transition: transform 0.3s ease;
-}
-
-.report-card:hover {
-  transform: translateY(-5px);
-}
-
-/* ========== الجداول ========== */
-.report-card table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 10px 0;
-}
-
-.report-card th,
-.report-card td {
-  white-space: nowrap;
-  border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 14px;
-  text-align: center;
-  color: black;
-}
-
-.report-card th {
-  background: #007bff;
-  color: white;
-}
-
-.report-card td {
-  background: #fafafa;
-}
-
-/* ========== التمرير الأفقي ========== */
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #bbb;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.dot.active {
-  background: #007bff;
-}
-
-
-/* إصلاح الاتجاه في النسخة العربية */
-body[dir="rtl"] .report-cards-container,
-body[dir="rtl"] .years {
-  direction: ltr; /* يخلي الجداول بحالهم بلا ما يتقلبو */
-}
-
-body[dir="rtl"] .aboutshPar,
-body[dir="rtl"] .prfrst {
-  text-align: right; /* يخلي النصوص ديال الفقرات العربية واجهتها صحيحة */
-  /* ===== تحسين العرض فالتلفون ===== */
-
-}
-
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-    <title data-lang="siteTitle">Study Path</title>
+    <link rel="stylesheet" href="css/school.css"/>
+    <title data-lang="siteTitle">Study Patch</title>
 </head>
 <body>
-    <!-- الهيدر -->
+    
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-lang="home">Home</a></li>
-                <li><a class="space"> | </a></li>
-                <li><a href="aboutMe.html" data-lang="about">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <hr />
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html" data-lang="home">Home</a></li>
+             <li><a class="space">  |  </a></li>
+        <li><a href="aboutMe.html" data-lang="about">About Me</a></li>
+        </ul>
+    </nav>
+</header>
+<hr/>
 
-    <!-- قسم My Study -->
-    <section class="status" id="studyStatus">
+  <section class="status" id="studyStatus">
         <div class="textTitle">
             <h1 class="myst" data-lang="myStudy">My study</h1>
             <h1 class="scho" data-lang="status">status</h1>
@@ -135,28 +41,30 @@ body[dir="rtl"] .prfrst {
         <button onclick="location.href='MySchool.html'" class="sch-btn" data-lang="schPtn">More about Chorouk school</button>
     </section>
 
-    <!-- السنة الأولى -->
-    <section class="years" id="ann">
-        <div class="textTitle">
-            <h1 class="myst" data-lang="frstyrs">First</h1>
-            <h1 class="scho" data-lang="frstann">Year</h1>
-        </div>
-        <p class="aboutshPar" data-lang="frstpr">
-            The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied with each other in kindergarten the previous year, but it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe.
-        </p>
-    </section>
+  <section class="frstyear" id="frstann">
+    <div class="textTitle">
+        <h1 class="myst" data-lang="frstann">First</h1>
+        <h1 class="scho" data-lang="frstyrs">Year</h1>
+    </div>
+    <p class="aboutshPar" data-lang="frstpr">
+         The first year, which was the first elementary school, was the year I entered this school, as I did not know anyone and no one knew me because most of them studied with each other in kindergarten the previous year, but it was not a problem because with time I got used to them and became part of them. I may not assess my level in that year accurately, but I say that I was one of the best, I believe.
+         Here below is the result of the first year ;
+    </p>
+    
+  </section>
 
-    <!-- الحاوية الخاصة بالجدولين -->
-    <div class="report-cards-container">
-        <div class="cards-wrapper">
+   <!-- الحاوية الخاصة بالجدولين -->
+<section class="school-carousel">
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+        <div class="carousel">
             <!-- بطاقة الدورة 1 -->
             <div class="report-card">
-                <h2>CHOUROUK EXCELLENCE</h2>
+                <h3>CHOUROUK EXCELLENCE</h3>
+                <p><strong>الاسم :</strong>نزار رغيبي</p>
                 <p><strong>السنة الدراسية:</strong> 2018 - 2019</p>
                 <p><strong>المستوى:</strong> الأول ابتدائي</p>
-                <p><strong>اسم التلميذ: </strong> نزار رغيبي</p>
-                <p><strong>الفوج :1</strong></p>
-                <p><strong>الدوره : 1</strong></p>
+                <p><strong>الدوره :</strong>1</p>
                 <div class="table-responsive">
                     <table>
                         <tr><th>المواد</th><th>النقطة /10</th></tr>
@@ -165,27 +73,26 @@ body[dir="rtl"] .prfrst {
                         <tr><td>الاساليب و التراكيب</td><td>9.75</td></tr>
                         <tr><td>التعبير الكتابي</td><td>10</td></tr>
                         <tr><td>Maths</td><td>10</td></tr>
-                        <tr><th>Français</th><th>Note /10</th></tr>
+                        <tr><th>les matieres</th><th>Note /10</th></tr>
                         <tr><td>Expression Orale</td><td>7.5</td></tr>
                         <tr><td>Lecture</td><td>7.25</td></tr>
-                        <tr><td>Expression Orale</td><td>9.75</td></tr>
                         <tr><td>Orthographe / Dictée</td><td>9</td></tr>
                         <tr><td>Exercices Écrits</td><td>9.75</td></tr>
                         <tr><td>Expression Ecrite</td><td>7.5</td></tr>
                         <tr><td>Ecriture / Copie</td><td>7.75</td></tr>
                         <tr><td>Poesie/chants/comptines</td><td>7.75</td></tr>
+
                     </table>
                 </div>
             </div>
 
             <!-- بطاقة الدورة 2 -->
             <div class="report-card">
-                <h2>CHOUROUK EXCELLENCE</h2>
+                <h3>CHOUROUK EXCELLENCE</h3>
+                <p><strong>الاسم :</strong>نزار رغيبي</p>
                 <p><strong>السنة الدراسية:</strong> 2018 - 2019</p>
                 <p><strong>المستوى:</strong> الأول ابتدائي</p>
-                <p><strong>اسم التلميذ: </strong> نزار رغيبي</p>
-                <p><strong>الفوج :1</strong></p>
-                <p><strong>الدوره : 2</strong></p>
+                <p><strong>الدوره :</strong>2</p>
                 <div class="table-responsive">
                     <table>
                         <tr><th>المواد</th><th>النقطة /10</th></tr>
@@ -193,72 +100,63 @@ body[dir="rtl"] .prfrst {
                         <tr><td>الصرف والتحويل</td><td>9.75</td></tr>
                         <tr><td>الاساليب و التراكيب</td><td>9</td></tr>
                         <tr><td>التعبير الكتابي</td><td>9.25</td></tr>
-                        <tr><td>Maths</td><td>9.25</td></tr>
-                        <tr><th>Français</th><th>Note /10</th></tr>
+                         <tr><td>Maths</td><td>9.25</td></tr>
+                        <tr><th>les matieres</th><th>Note /10</th></tr>
                         <tr><td>Expression Orale</td><td>9</td></tr>
                         <tr><td>Lecture</td><td>8.5</td></tr>
-                        <tr><td>Expression Orale</td><td>9.75</td></tr>
                         <tr><td>Orthographe / Dictée</td><td>7.75</td></tr>
                         <tr><td>Exercices Écrits</td><td>9.75</td></tr>
                         <tr><td>Expression Ecrite</td><td>9</td></tr>
                         <tr><td>Ecriture / Copie</td><td>9</td></tr>
                         <tr><td>Poesie/chants/comptines</td><td>8.5</td></tr>
+
                     </table>
                 </div>
             </div>
         </div>
-
-        <button class="prev">&#8592;</button>
-        <button class="next">&#8594;</button>
+        <button class="arrow right">&#10095;</button>
     </div>
+</section>
 
-    <script>
-    const wrapper = document.querySelector(".cards-wrapper");
-    const cards = document.querySelectorAll(".report-card");
-    let current = 0;
+<script>
+const carousel = document.querySelector('.carousel');
+const leftBtn = document.querySelector('.arrow.left');
+const rightBtn = document.querySelector('.arrow.right');
 
-    function showCard(index){
-        wrapper.style.transform = `translateX(-${index * (cards[0].offsetWidth + 20)}px)`;
-    }
+leftBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+});
 
-    document.querySelector(".next").addEventListener("click", ()=>{
-        current = (current+1) % cards.length;
-        showCard(current);
-    });
+rightBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+});
 
-    document.querySelector(".prev").addEventListener("click", ()=>{
-        current = (current-1+cards.length) % cards.length;
-        showCard(current);
-    });
 
-    // تمرير بالسحب للموبايل
-    let startX = 0;
-    wrapper.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-    wrapper.addEventListener("touchend", e => {
-        const endX = e.changedTouches[0].clientX;
-        if(startX - endX > 50) document.querySelector(".next").click();
-        else if(endX - startX > 50) document.querySelector(".prev").click();
-    });
 
-     // ترجمة الصفحة
-    function translateSchool() {
-        const lang = localStorage.getItem("siteLang") || "en";
-        document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-        if(lang === "ar") {
-            fetch("lang/ar.json")
-                .then(res => res.json())
-                .then(data => {
-                    document.querySelectorAll("[data-lang]").forEach(el => {
-                        const key = el.getAttribute("data-lang");
-                        if(data.school && data.school[key]){
-                            if(el.tagName === "INPUT") el.placeholder = data.school[key];
-                            else el.textContent = data.school[key];
-                        }
-                    });
-                });
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = localStorage.getItem("siteLang") || "en";
+  if(lang === "ar") document.body.dir = "rtl";
+  else document.body.dir = "ltr";
+
+  fetch(`lang/${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        const key = el.getAttribute("data-lang");
+        if(data.school && data.school[key]){
+          if(el.tagName === "INPUT") el.placeholder = data.school[key];
+          else el.textContent = data.school[key];
         }
-    }
-    document.addEventListener("DOMContentLoaded", translateSchool);
-    </script>
+      });
+    });
+});
+</script>
+<script>
+  window.onload = function() {
+    location.reload(true); // يجبر المتصفح يعاود يحمل الصفحة
+  };
+</script>
+
+
 </body>
 </html>

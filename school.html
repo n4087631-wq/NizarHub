@@ -4,6 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/school.css"/>
+    <style>
+        /* ========== الجداول ========== */
+.report-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.report-card th,
+.report-card td {
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+.report-card th {
+  background: #007bff;
+  color: white;
+}
+
+.report-card td {
+  background: #fafafa;
+}
+
+.report-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #ffffff; /* الخلفية البيضاء */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-width: 560px;
+  transition: transform 0.3s ease;
+}
+
+/* حاوية السحب */
+.report-cards-container {
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* إخفاء شريط التمرير على بعض المتصفحات */
+.report-cards-container::-webkit-scrollbar {
+  display: none;
+}
+.report-cards-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.school-carousel {
+    padding: 20px;
+    color: white;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.report-card {
+    flex: 0 0 90%; /* يظهر بطاقة واحدة تقريباً */
+    scroll-snap-align: start;
+    background-color: #fff;
+    color: black;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.report-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-card th,
+.report-card td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrow.left { 
+  left: -10px; 
+}
+.arrow.right {
+   right: -10px; 
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ====== تعديل جديد: يجعل كل جدول يسحب أفقيًا داخل البطاقة ====== */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* سلاسة على الجوال */
+}
+
+.report-card table {
+    min-width: max-content; /* يضمن ظهور كل الأعمدة بما فيها الفرنسية */
+}
+    </style>
     <title data-lang="siteTitle">Study Patch</title>
 </head>
 <body>
@@ -151,11 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
-<script>
-  window.onload = function() {
-    location.reload(true); // يجبر المتصفح يعاود يحمل الصفحة
-  };
-</script>
+
 
 
 </body>

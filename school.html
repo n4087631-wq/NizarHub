@@ -555,19 +555,79 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 </section>
-    <section class="school" id="my-school">
-        <div class="textTitle">
-            <h1 class="myst" data-lang="secyrs">Second</h1>
-            <h1 class="scho" data-lang="secann">Year</h1>
-        </div>
-        <p class="aboutshPar" data-lang="secyrpr">
-            This year I had gotten a little used to school and the students, but this year we did not study in school until the beginning of the year, and then we completed the year studying remotely due to the spread of the Corona epidemic.
-        </p>
-        <div class="textTitle">
-        <h1 class="myst" data-lang="secdor">First</h1>
-        <h1 class="scho" data-lang="sec">semester</h1>
-        </div>
-    </section>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="scnd-title-1"></h1>
+    <h1 class="scho" id="scnd-title-2"></h1>
+  </div>
+  <p class="aboutshPar" id="scnd-paragraph"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const secondYearTranslations = {
+        ar: {
+            title1: "السنة",
+            title2: "الثانية",
+            paragraph:"في هذه السنه كنت قد تعودت قليلا على المدرسه والتلاميذ ولكن لم ندرس هده السنه فالمدرسه الا بدايه السنه ثم بعدها اكملنا السنه في الدراسه عن بعد بسبب انتشار وباء كورونا",
+        },
+        en: {
+            title1: "Second",
+            title2: "Year",
+            paragraph: "This year I had gotten a little used to school and the students, but this year we did not study in school until the beginning of the year, and then we completed the year studying remotely due to the spread of the Corona epidemic."
+        }
+    };
+
+    document.getElementById("scnd-title-1").textContent = secondYearTranslations[lang].title1;
+    document.getElementById("scnd-title-2").textContent = secondYearTranslations[lang].title2;
+    document.getElementById("scnd-paragraph").textContent = secondYearTranslations[lang].paragraph;
+});
+
+</script>
+
+<span id="scnd-title-1"></span>
+<span id="scnd-title-2"></span>
+<p id="scnd-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dora"></h1>
+    <h1 class="scho" id="one"></h1>
+  </div>
+  <p class="aboutshPar" id="none"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const secondYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الاولى",
+            paragraph:" ",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: "  "
+        }
+    };
+
+    document.getElementById("dora").textContent = secondYearTranslations[lang].title1;
+    document.getElementById("one").textContent = secondYearTranslations[lang].title2;
+    document.getElementById("none").textContent = secondYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dora"></span>
+<span id="one"></span>
+<p id="none"></p>
+
+
     <section class="grades-section">
   <div class="sheet">
     <div class="sheet-header">
@@ -667,10 +727,641 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 </section>
 
- <div class="textTitle">
-        <h1 class="myst" data-lang="secdor">Second</h1>
-        <h1 class="scho" data-lang="lol">semester</h1>
+
+<span id="scnd-title-1"></span>
+<span id="scnd-title-2"></span>
+<p id="scnd-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dor"></h1>
+    <h1 class="scho" id="two"></h1>
+  </div>
+  <p class="aboutshPar" id="none"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const secondYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الثانية",
+            paragraph:" ",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: " "
+        }
+    };
+
+    document.getElementById("dor").textContent = secondYearTranslations[lang].title1;
+    document.getElementById("two").textContent = secondYearTranslations[lang].title2;
+    document.getElementById("none").textContent = secondYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dor"></span>
+<span id="two"></span>
+<p id="none"></p>
+
+    <section class="grades-section">
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="school-info">
+        <div class="logo"><img src="assets/maroc-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="school-text">
+          <h1>CHOUROUK EXCELLENCE</h1>
+          <p>الموسم الدراسي 2019/2020  -- الثاني ابتدائي</p>
         </div>
+      </div>
+      <div class="header-meta">
+        <p>الصف: 2APG-1</p>
+        <p>عدد التلاميذ : 27</p>
+        <p>رقم التسجيل: C189040597</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="card">
+        <div class="label">التلميذ</div>
+        <div class="value">نزار رغيبي</div>
+        <div style="height:8px"></div>
+        <div class="label">المستوى</div>
+        <div class="value"> الثاني ابتدائي</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">المعدل السنوي</div>
+        <div class="value">8.5</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">الملاحظة</div>
+        <div class="value">في تحسن </div>
+      </div>
+    </div>
+
+    <div class="grades" role="region" aria-label="جدول النقط">
+      <table>
+        <thead>
+          <tr>
+            <th>المواد</th>
+            <th>المكونات</th>
+            <th>نقطه المراقبه المستمره</th>
+            <th>المعامل</th>
+            <th>ن×م</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="subject">التربية الاسلاميه</td><td>معدل الوحده</td><td>8.62</td><td>1</td><td>8.62</td></tr>
+          <tr><td class="subject">اللغه العربيه</td><td>التعبيرالكتابي</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>التمارين الكتابيه</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">              </td><td>القراءة</td><td>8.67</td><td>1</td><td>8.67</td></tr>
+          <tr><td class="subject">              </td><td>الاملاء</td><td>8.75</td><td>1</td><td>8.75</td></tr>
+          <tr><td class="subject">              </td><td>الخط</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>الاستماع والتحذث</td><td>9.17</td><td>1</td><td>9.17</td></tr>
+          <tr><td class="subject">              </td><td>معدل الوحده</td><td>8.6</td><td>1</td><td>8.6</td></tr>
+          <tr><td class="subject">اللغة  الفرنسيه</td><td>معدل الوحده</td><td>7.41</td><td>1</td><td>7.41</td></tr>
+          <tr><td class="subject">              </td><td>Dictée</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>Activites Orales</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>Poesie</td><td>8.25</td><td>1</td><td>8.25</td></tr>
+          <tr><td class="subject">              </td><td>Lecture</td><td>7.67</td><td>1</td><td>7.67</td></tr>
+          <tr><td class="subject">              </td><td>Ecriture / Copie</td><td>6.75</td><td>1</td><td>6.75</td></tr>
+          <tr><td class="subject">              </td><td>Exercices Ecrite</td><td>8.22</td><td>1</td><td>8.22</td></tr>
+          <tr><td class="subject">              </td><td>Projet de classe</td><td>6.5</td><td>1</td><td>6.5</td></tr>
+          <tr><td class="subject">              </td><td>Activites de p.Ecrite</td><td>5.5</td><td>1</td><td>5.5</td></tr>
+          <tr><td class="subject">              </td><td>Lexique</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>Grammaire</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">              </td><td>Conjugaison</td><td>5</td><td>1</td><td>5</td></tr>
+          <tr><td class="subject">              </td><td>Orthographe / Dictée</td><td>8.25</td><td>1</td><td>8.25</td></tr>
+          <tr><td class="subject">              </td><td>Copie</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">English</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">النشاط العلمي</td><td>معدل الوحده</td><td>10</td><td>1</td><td>10</td></tr>
+          <tr><td class="subject">التربية الفنية</td><td>معدل الوحده</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">الرياضيات</td><td>معدل الوحده</td><td>9.38</td><td>1</td><td>9.38</td></tr>
+          <tr><td class="subject">التربية البدنية</td><td>معدل الوحده</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">المعلوميات</td><td>معدل الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+      </table>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="label">معدل القسم</div>
+        <div class="value">7.7</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="label">المجموع ن × م</div>
+        <div class="value">59.51</div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="thrd-title-1"></h1>
+    <h1 class="scho" id="thrd-title-2"></h1>
+  </div>
+  <p class="aboutshPar" id="thrd-paragraph"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const thirdYearTranslations = {
+        ar: {
+            title1: "السنة",
+            title2: "الثالثة",
+            paragraph:"في هذه السنه عدنا للدراسه في المدارس وكنت قد تعودت تماما على المدرسه والتلاميذ .لقد ةانت هده السنه حتما من  افضل السنوات التي درستها ادا لم تكن الافضل . هدا من ناحيه المتعه اما من ناحيه الدراسه فا كانت الدوره الاولى غير مشرفه لاهلي سبب ما رغم انني كنت في لائحه الشرف لكن كنت اقل شخص في لائحه الشرف وفالدوره الثانيه تحسن الوضع اكثر.",
+        },
+        en: {
+            title1: "Third",
+            title2: "Year",
+            paragraph: "This year we went back to school and I had completely gotten used to school and the students. This year was definitely one of the best years I have studied, if not the best. This was in terms of enjoyment. As for studying, the first semester was not honorable for my family for some reason. Although I was on the honor roll, I was the lowest person on the honor roll, and in the second semester the situation improved even more."
+        }
+    };
+
+    document.getElementById("thrd-title-1").textContent = thirdYearTranslations[lang].title1;
+    document.getElementById("thrd-title-2").textContent = thirdYearTranslations[lang].title2;
+    document.getElementById("thrd-paragraph").textContent = thirdYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="thrd-title-1"></span>
+<span id="thrd-title-2"></span>
+<p id="thrd-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dorathird"></h1>
+    <h1 class="scho" id="onethird"></h1>
+  </div>
+  <p class="aboutshPar" id="none"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const thirdYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الاولى",
+            paragraph:" ",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: "  "
+        }
+    };
+
+    document.getElementById("dorathird").textContent = thirdYearTranslations[lang].title1;
+    document.getElementById("onethird").textContent = thirdYearTranslations[lang].title2;
+    document.getElementById("nonethird").textContent = thirdYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dorathird"></span>
+<span id="onethird"></span>
+<p id="nonethird"></p>
+
+
+    <section class="grades-section">
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="school-info">
+        <div class="logo"><img src="assets/maroc-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="school-text">
+          <h1>CHOUROUK EXCELLENCE</h1>
+          <p>الموسم الدراسي 2021/2020  -- الثالث ابتدائي</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p>الصف: 3APG-1</p>
+        <p>عدد التلاميذ : 15</p>
+        <p>رقم التسجيل: C189040597</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="card">
+        <div class="label">التلميذ</div>
+        <div class="value">نزار رغيبي</div>
+        <div style="height:8px"></div>
+        <div class="label">المستوى</div>
+        <div class="value"> الثالث ابتدائي</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">معدل الدوره</div>
+        <div class="value">7.64</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">الملاحظة</div>
+        <div class="value"> نتائج مستحسنة</div>
+      </div>
+    </div>
+
+    <div class="grades" role="region" aria-label="جدول النقط">
+      <table>
+        <thead>
+          <tr>
+            <th>المواد</th>
+            <th>المكونات</th>
+            <th>نقطه المراقبه المستمره</th>
+            <th>المعامل</th>
+            <th>ن×م</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="subject">التربية الاسلاميه</td><td>معدل الوحده</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+          <tr><td class="subject">اللغه العربيه</td><td> مشروع الوحده</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>التعبير الكتابي</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>القراءة</td><td>7.75</td><td>1</td><td>7.75</td></tr>
+          <tr><td class="subject">              </td><td>الاملاء</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+          <tr><td class="subject">              </td><td>التطبيقات الكتابيه</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>الاستماع والتحذث</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+          <tr><td class="subject">              </td><td>معدل الوحده</td><td>7.29</td><td>1</td><td>7.29</td></tr>
+          <tr><td class="subject">اللغة  الفرنسيه</td><td>معدل الوحده</td><td>6.41</td><td>1</td><td>6.41</td></tr>
+          <tr><td class="subject">              </td><td>Dictée</td><td>5.25</td><td>1</td><td>5.25</td></tr>
+          <tr><td class="subject">              </td><td>Activites Orales</td><td>6.25</td><td>1</td><td>6.25</td></tr>
+          <tr><td class="subject">              </td><td>Poesie</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>Lecture</td><td>6.25</td><td>1</td><td>6.25</td></tr>
+          <tr><td class="subject">              </td><td>Ecriture / Copie</td><td>5</td><td>1</td><td>5</td></tr>
+          <tr><td class="subject">              </td><td>Exercices Ecrite</td><td>6.75</td><td>1</td><td>6.75</td></tr>
+          <tr><td class="subject">              </td><td>Protection Ecrite</td><td>6.5</td><td>1</td><td>6.5</td></tr>
+          <tr><td class="subject">              </td><td>Projet de classe</td><td>7.75</td><td>1</td><td>7.75</td></tr>
+          <tr><td class="subject">              </td><td>Activites de pro.ecrite</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>Lexique</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+          <tr><td class="subject">              </td><td>Grammaire</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>Conjugaison</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">النشاط العلمي</td><td>معدل الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">التربية الفنية</td><td>معدل الوحده</td><td>7.75</td><td>1</td><td>7.75</td></tr>
+          <tr><td class="subject">الرياضيات</td><td>معدل الوحده</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">التربية البدنية</td><td>معدل الوحده</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+      </table>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="label">معدل القسم</div>
+        <div class="value">7.31</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="label">المجموع ن × م</div>
+        <div class="value">53.45</div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<span id="scnd-title-1"></span>
+<span id="scnd-title-2"></span>
+<p id="scnd-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dorthird"></h1>
+    <h1 class="scho" id="twothird"></h1>
+  </div>
+  <p class="aboutshPar" id="nonethird"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const thirdYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الثانية",
+            paragraph:" ",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: " "
+        }
+    };
+
+    document.getElementById("dorthird").textContent = thirdYearTranslations[lang].title1;
+    document.getElementById("twothird").textContent = thirdYearTranslations[lang].title2;
+    document.getElementById("nonethird").textContent = thirdYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dorthird"></span>
+<span id="twothird"></span>
+<p id="nonethird"></p>
+
+    <section class="grades-section">
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="school-info">
+        <div class="logo"><img src="assets/maroc-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="school-text">
+          <h1>CHOUROUK EXCELLENCE</h1>
+          <p>الموسم الدراسي 2021/2020  -- الثالت ابتدائي</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p>الصف: 3APG-1</p>
+        <p>عدد التلاميذ : 15</p>
+        <p>رقم التسجيل: C189040597</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="card">
+        <div class="label">التلميذ</div>
+        <div class="value">نزار رغيبي</div>
+        <div style="height:8px"></div>
+        <div class="label">المستوى</div>
+        <div class="value"> الثالت ابتدائي</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">معدل الدورة</div>
+        <div class="value">8.72</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">الملاحظة</div>
+        <div class="value">عمل حسن</div>
+      </div>
+    </div>
+
+    <div class="grades" role="region" aria-label="جدول النقط">
+      <table>
+        <thead>
+          <tr>
+            <th>المواد</th>
+            <th>المكونات</th>
+            <th>نقطه المراقبه المستمره</th>
+            <th>المعامل</th>
+            <th>ن×م</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="subject">التربية الاسلاميه</td><td>معدل الوحده</td><td>9.12</td><td>1</td><td>9.12</td></tr>
+          <tr><td class="subject">اللغه العربيه</td><td>مشروع الوحده</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">              </td><td>التعبير الكتابي</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>القراءة</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>الاملاء</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>التطبيقات الكتابيه</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">              </td><td>الاستماع والتحذث</td><td>8.25</td><td>1</td><td>8.25</td></tr>
+          <tr><td class="subject">اللغة  الفرنسيه</td><td>معدل الوحده</td><td>8.53</td><td>1</td><td>8.53</td></tr>
+          <tr><td class="subject">              </td><td>Dictée</td><td>8.75</td><td>1</td><td>8.75</td></tr>
+          <tr><td class="subject">              </td><td>Activites Orales</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>Poesie</td><td>9.75</td><td>1</td><td>9.75</td></tr>
+          <tr><td class="subject">              </td><td>Lecture</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">              </td><td>Ecriture / Copie</td><td>8.25</td><td>1</td><td>8.25</td></tr>
+          <tr><td class="subject">              </td><td>Exercices Ecrite</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">              </td><td>Prodection ecrite</td><td>7.75</td><td>1</td><td>7.75</td></tr>
+          <tr><td class="subject">              </td><td>Projet de classe</td><td>8.75</td><td>1</td><td>8.75</td></tr>
+          <tr><td class="subject">              </td><td>Activites de production ecrite</td><td>7.25</td><td>1</td><td>7.25</td></tr>
+          <tr><td class="subject">              </td><td>Lexique</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">              </td><td>Conjugaison</td><td>9.25</td><td>1</td><td>9.25</td></tr>
+          <tr><td class="subject">              </td><td>Grammaire</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">النشاط العلمي</td><td>معدل الوحده</td><td>8.75</td><td>1</td><td>8.75</td></tr>
+          <tr><td class="subject">التربية الفنية</td><td>معدل الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">الرياضيات</td><td>معدل الوحده</td><td>8.75</td><td>1</td><td>8.75</td></tr>
+          <tr><td class="subject">التربية البدنية</td><td>معدل الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+      </table>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="label">معدل القسم</div>
+        <div class="value">8.23</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="label">المجموع ن × م</div>
+        <div class="value">61.03</div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+                       <!---4---->
+
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="frth-title-1"></h1>
+    <h1 class="scho" id="frth-title-2"></h1>
+  </div>
+  <p class="aboutshPar" id="frth-paragraph"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const fourthYearTranslations = {
+        ar: {
+            title1: "السنة",
+            title2: "الرابعه",
+            paragraph:"السنه الرابعه وكانت سنه غريبه جدا حيث لم يحصل فيها حذت مميز او شي يدكر فقط ادرس واعود للبيت وهكذا",
+        },
+        en: {
+            title1: "Fourth",
+            title2: "Year",
+            paragraph: "The fourth year was a very strange year, as nothing special or memorable happened. I just studied and went home, and that's it."
+        }
+    };
+
+    document.getElementById("frth-title-1").textContent = fourthYearTranslations[lang].title1;
+    document.getElementById("frth-title-2").textContent = fourthYearTranslations[lang].title2;
+    document.getElementById("frth-paragraph").textContent =fourthYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="frth-title-1"></span>
+<span id="frth-title-2"></span>
+<p id="frth-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dorafrth"></h1>
+    <h1 class="scho" id="onefrth"></h1>
+  </div>
+  <p class="aboutshPar" id="none"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const fourthYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الاولى",
+            paragraph:" ",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: "  "
+        }
+    };
+
+    document.getElementById("dorafrth").textContent = fourthYearTranslations[lang].title1;
+    document.getElementById("onefrth").textContent = fourthYearTranslations[lang].title2;
+    document.getElementById("none").textContent = fourthYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dorafrth"></span>
+<span id="onefrth"></span>
+<p id="none"></p>
+
+
+    <section class="grades-section">
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="school-info">
+        <div class="logo"><img src="assets/maroc-icon.webp" alt="maicon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;"></div>
+        <div class="school-text">
+          <h1>CHOUROUK EXCELLENCE</h1>
+          <p>الموسم الدراسي 2021/2022  -- الرابع ابتدائي</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p>الصف: 4APG-1</p>
+        <p>عدد التلاميذ : 31</p>
+        <p>رقم التسجيل: C189040597</p>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="card">
+        <div class="label">التلميذ</div>
+        <div class="value">نزار رغيبي</div>
+        <div style="height:8px"></div>
+        <div class="label">المستوى</div>
+        <div class="value"> الرابع ابتدائي</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">معدل الدوره</div>
+        <div class="value">9.05</div>
+      </div>
+
+      <div class="card small-card">
+        <div class="label">الملاحظة</div>
+        <div class="value"> عمل جيد</div>
+      </div>
+    </div>
+
+    <div class="grades" role="region" aria-label="جدول النقط">
+      <table>
+        <thead>
+          <tr>
+            <th>المواد</th>
+            <th>المكونات</th>
+            <th>نقطه المراقبه المستمره</th>
+            <th>المعامل</th>
+            <th>ن×م</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="subject">التربية الاسلاميه</td><td>معدل الوحده</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">اللغه العربيه</td><td> مشروع الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>التعبير الكتابي</td><td>7.5</td><td>1</td><td>7.5</td></tr>
+          <tr><td class="subject">              </td><td>التواصل الشفهي</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>القراءة</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>الاملاء</td><td>9.25</td><td>1</td><td>9.25</td></tr>
+          <tr><td class="subject">              </td><td>التراكيب</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">              </td><td>الصرف والتحويل</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">اللغة  الفرنسيه</td><td>معدل الوحده</td><td>8.28</td><td>1</td><td>8.28</td></tr>
+          <tr><td class="subject">              </td><td>Grammaire</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>Conjugaison</td><td>7</td><td>1</td><td>7</td></tr>
+          <tr><td class="subject">              </td><td>Orthographe / Dictée</td><td>8</td><td>1</td><td>8</td></tr>
+          <tr><td class="subject">              </td><td>Activites Orales</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>Poesie</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>Lecture</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">              </td><td>Ecriture / Copie</td><td>6.5</td><td>1</td><td>6.5</td></tr>
+          <tr><td class="subject">              </td><td>Protection Ecrite</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+          <tr><td class="subject">              </td><td>Projet de classe</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">النشاط العلمي</td><td>معدل الوحده</td><td>9.5</td><td>1</td><td>9.5</td></tr>
+          <tr><td class="subject">التربية الفنية</td><td>معدل الوحده</td><td>9</td><td>1</td><td>9</td></tr>
+          <tr><td class="subject">الرياضيات</td><td>معدل الوحده</td><td>9.25</td><td>1</td><td>9.25</td></tr>
+          <tr><td class="subject">التربية البدنية</td><td>معدل الوحده</td><td>8.5</td><td>1</td><td>8.5</td></tr>
+      </table>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="label">معدل القسم</div>
+        <div class="value">8.25</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="label">المجموع ن × م</div>
+        <div class="value">72.42</div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<span id="scnd-title-1"></span>
+<span id="scnd-title-2"></span>
+<p id="scnd-paragraph"></p>
+
+<section class="frstyear" id="frstann">
+  <div class="textTitle">
+    <h1 class="myst" id="dorfrth"></h1>
+    <h1 class="scho" id="twofrth"></h1>
+  </div>
+  <p class="aboutshPar" id="nonefrth"></p>
+</section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("siteLang") || "en";
+
+    const fourthYearTranslations = {
+        ar: {
+            title1: "الدورة",
+            title2: "الثانية",
+            paragraph:"لم يثم العثور بعد على نتيجه الدوره الثانيه للمستوى الرابع ابتدائي. قد يتم وضعها فالموقع مستقبلا 🙏",
+        },
+        en: {
+            title1: "Second",
+            title2: "Semester",
+            paragraph: "The results for the second round of the fourth grade of primary school have not been found yet. They may be posted on the website in the future🙏."
+        }
+    };
+
+    document.getElementById("dorfrth").textContent = fourthYearTranslations[lang].title1;
+    document.getElementById("twofrth").textContent = fourthYearTranslations[lang].title2;
+    document.getElementById("nonefrth").textContent = fourthYearTranslations[lang].paragraph;
+});
+
+</script>
+<span id="dorfrth"></span>
+<span id="twofrth"></span>
+<p id="nonefrth"></p>
+
+   
 
 <script>
 const carousel = document.querySelector('.carousel');
@@ -705,7 +1396,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
-
 
 
 </body>
